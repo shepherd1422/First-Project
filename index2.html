@@ -4,60 +4,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <style>
-      button {
-        font-size: 26px;
-        padding: 20px 30px;
-        background-color:coral;
-
-      }
-      .modal {
-        opacity: 0;
-        transition: 0.3s;
-      }
-
-      .modal--showed {
-        opacity: 1;
-      }
-    </style>
+    <link rel="stylesheet" href="index2.css">
   </head>
   <body>
     <button class="open">Открыть модалку</button>
-     
+    
     <div class="modal">
-        <button class="close">Закрыть</button>
+        <button class="close">Закрыть</button> 
         Модалка
     </div>
     <script>
-        const buttonOpened = document.querySelector('.open');
+        const buttonOpened = document.querySelectorAll ('button');
         const modal = document.querySelector('.modal');
         const buttonClosed = document.querySelector('.close');
+
+        console.log(buttonOpened);
+        
+        buttonOpened.forEach(
+            (button) => {
+                button.addEventListener('click', () => {
+                    modal.classList.add('modal--showed');
+                });
+            }
+        );
 
         const closeModal = () => {
             modal.classList.remove('modal--showed')
             buttonClosed.removeEventListener('click', closeModal);
         }
 
-        
-
         buttonOpened.addEventListener('click', () => {
             modal.classList.add('modal--showed');
-            buttonClosed.addEventListener('click', closeModal);
+            buttonClosed.addEventListener('click', closeModal); 
         });
-
-        
-        // const modal = document.querySelector('.modal');
-        // const buttonClosed = document.querySelector('.close');
-        
-
-        // buttonOpened.addEventListener('click', () => {
-        //     modal.classList.add('modal--showed');
-        // });
-        
-
-        // buttonClosed.addEventListener('click', () => {
-        //     modal.classList.remove('modal--showed'); 
-        // });
      </script>
   </body>
 </html>
