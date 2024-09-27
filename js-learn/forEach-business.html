@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const purchase234 = [
+            {name: 'item', quantity: 2, price: 10},
+            {name: 'item2', quantity: 2, price: 20},
+            {name: 'item3', quantity: 2, price: 15}
+        ]
+
+        function calculateTotalCost(purchaseOrder){
+            let totalCost = 0;
+             purchaseOrder.forEach(order => {
+                let orderCost = order.quantity * order.price;
+                totalCost += orderCost; 
+             })
+            return totalCost;
+        }
+
+        console.log(purchase234)
+    </script>
+</body>
+</html>
