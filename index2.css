@@ -1,0 +1,14 @@
+button {
+    font-size: 26px;
+    padding: 20px 30px;
+    background-color:coral;
+
+  }
+  .modal {
+    opacity: 0;
+    transition: 0.3s;
+  }
+
+  .modal--showed {
+    opacity: 1;
+  }
